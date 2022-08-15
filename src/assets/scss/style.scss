@@ -1,0 +1,17 @@
+@import "./reset.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+body.white-content {
+  background-color: #eee;
+}
+
+body {
+  background-color: #0a192f;
+  transition: all 0.3s ease 0s;
+}
+
+@import "./parts/loader.scss";
+@import "./parts/header.scss";
+
+@import "./components/modeButton.scss";
+@import "./components/settingsButton.scss";

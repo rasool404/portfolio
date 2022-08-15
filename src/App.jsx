@@ -1,27 +1,46 @@
+import React, { useEffect, useState } from "react";
 import useLocalStorage from "use-local-storage";
-import "./App.css";
-import Square from "./components/square";
+import "./assets/scss/style.scss";
+
+import Loader from "./components/Loader";
+
+import Main from "./pages/Main";
+
+export const ModeContex = React.createContext();
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
     "theme",
     defaultDark ? "dark" : "light"
   );
 
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
+  useEffect(() => {
+    if (theme === "light") {
+      document.body.classList.remove("dark-content");
+      document.body.classList.add("white-content");
+    } else {
+      document.body.classList.remove("white-content");
+    }
+  }, [theme]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  console.log(theme);
 
   return (
-    <div className="app" data-theme={theme}>
-      <span>Darkmode Test</span>
-      <button onClick={switchTheme}>
-        Switch to {theme === "light" ? "Dark" : "Light"} Theme
-      </button>
-      <Square />
-    </div>
+    <ModeContex.Provider value={{ theme, setTheme }}>
+      <div className="app">
+        <Main />
+        <Loader loading={loading} />
+      </div>
+    </ModeContex.Provider>
   );
 }
 

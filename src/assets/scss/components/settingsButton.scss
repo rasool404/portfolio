@@ -1,0 +1,22 @@
+.settings-wrapper {
+  .settings-button {
+  }
+
+  .settings-block {
+    position: absolute;
+    width: 10%;
+    min-width: 100px;
+    height: 100px;
+    top: 150%;
+    right: 0px;
+    background-color: #eee;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      top: 100%;
+    }
+  }
+}
