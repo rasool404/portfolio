@@ -1,9 +1,9 @@
 import React from "react";
 
-const Loader = ({ loading }) => {
+const Loader = () => {
   return (
     <>
-      <div className={loading ? "loader" : "loader hide"}>
+      <div className="loader">
         <div className="centered">
           <div className="blob1"></div>
           <div className="blob2"></div>

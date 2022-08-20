@@ -1,0 +1,66 @@
+.settings-wrapper {
+  .settings-button {
+    cursor: pointer;
+    margin-left: 20px;
+    @media (max-width: 945px) {
+      margin-left: 10px;
+    }
+    svg {
+      height: 30px;
+      fill: #64ffda;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        fill: #ccd6f6;
+      }
+    }
+  }
+
+  .settings-block {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    top: 100%;
+    right: 0px;
+    border-radius: 10px;
+    background-color: #112240;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transition: all 0.3s ease-in-out 0s;
+    visibility: hidden;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, 50%) rotateX(-45deg);
+    &.active {
+      transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+      opacity: 1;
+      visibility: visible;
+
+      .settings-button svg {
+        fill: #ccd6f6;
+      }
+    }
+    // &::before {
+    //   content: "";
+    //   width: 0;
+    //   height: 0;
+    //   border-left: 7px solid transparent;
+    //   border-right: 7px solid transparent;
+    //   border-bottom: 14px solid #eee;
+    //   position: absolute;
+    //   top: -13px;
+    //   right: 0px;
+    // }
+  }
+}
+.settings-secondary-text {
+  color: #a8b2d1;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 16px;
+  @media (max-width: 800px) {
+    // font-size: 0;
+  }
+}

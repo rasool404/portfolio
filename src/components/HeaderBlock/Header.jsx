@@ -1,20 +1,19 @@
 import React from "react";
+import ModeButton from "./ModeButton";
 
-import ModeToggleButton from "./ModeButton";
 import SettingsButton from "./SettingsBlock";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
     <header className="header">
       <nav className="nav">
         <a href="" className="logo">
           <svg
-            version="1.0"
             xmlns="http://www.w3.org/2000/svg"
-            width="148.000000pt"
-            height="133.000000pt"
             viewBox="0 0 148.000000 133.000000"
-            preserveAspectRatio="xMidYMid meet"
           >
             <g
               transform="translate(0.000000,133.000000) scale(0.100000,-0.100000)"
@@ -64,7 +63,33 @@ const Header = () => {
             <SettingsButton />
           </div>
         </div>
-        <div className="menu"></div>
+        <div className="menu">
+          <div
+            className={
+              isMenuOpen
+                ? "menu__burger hamburger active"
+                : "menu__burger hamburger"
+            }
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="#64ffda">
+              <path
+                className="line line1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+              />
+              <path className="line line2" d="M 20,50 H 80" />
+              <path
+                className="line line3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+              />
+            </svg>
+          </div>
+          <Sidebar isMenuOpen={isMenuOpen} />
+          <div
+            className={isMenuOpen ? "menu__cover active" : "menu__cover"}
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+        </div>
       </nav>
     </header>
   );

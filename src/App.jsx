@@ -9,7 +9,7 @@ import Main from "./pages/Main";
 export const ModeContex = React.createContext();
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -29,17 +29,14 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 3500);
   }, []);
 
   console.log(theme);
 
   return (
     <ModeContex.Provider value={{ theme, setTheme }}>
-      <div className="app">
-        <Main />
-        <Loader loading={loading} />
-      </div>
+      <div className="app">{loading ? <Loader /> : <Main />}</div>
     </ModeContex.Provider>
   );
 }

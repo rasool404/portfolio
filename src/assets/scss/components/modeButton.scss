@@ -1,4 +1,47 @@
-.modeButton {
-  padding: 10px;
-  display: inline-block;
+.mode-button {
+  div {
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 30px;
+    }
+  }
+}
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switch-label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 80px;
+  height: 40px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.switch-label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 45%;
+  height: 75%;
+  background: #383838;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + .switch-label {
+  background: #ccd6f6;
+}
+
+input:checked + .switch-label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
 }
