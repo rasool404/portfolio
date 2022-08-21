@@ -1,4 +1,5 @@
 import React from "react";
+import Translate from "../Translate";
 import ModeButton from "./ModeButton";
 
 import SettingsButton from "./SettingsBlock";
@@ -41,23 +42,28 @@ const Header = () => {
         <div className="links">
           <ol className="linksList">
             <li>
-              <a href="">About</a>
+              <a href="">{<Translate>nav_about</Translate> || "About"}</a>
             </li>
             <li>
-              <a href="">Skills & Tools</a>
+              <a href="">
+                {<Translate>nav_skills_and_tools</Translate> ||
+                  "Skills & Tools"}
+              </a>
             </li>
             <li>
-              <a href="">Works</a>
+              <a href="">{<Translate>nav_works</Translate> || "Works"}</a>
             </li>
             <li>
-              <a href="">Testimonials</a>
+              <a href="">
+                {<Translate>nav_testimonials</Translate> || "Testimonials"}
+              </a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="">{<Translate>nav_contact</Translate> || "Contact"}</a>
             </li>
           </ol>
-          <div className="button">
-            <a href="">Blog</a>
+          <div className="header-button">
+            <a href="">{<Translate>nav_blog</Translate> || "Blog"}</a>
           </div>
           <div>
             <SettingsButton />

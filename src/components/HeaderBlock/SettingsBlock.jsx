@@ -1,5 +1,6 @@
 import React from "react";
 import ModeButton from "./ModeButton";
+import TranslateToggle from "./TranslateToggle";
 
 const SettingsButton = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -26,6 +27,7 @@ const SettingsButton = () => {
       </div>
       <div className={isOpen ? "settings-block active" : "settings-block"}>
         <ModeButton setIsOpen={setIsOpen} />
+        <TranslateToggle />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Loader from "./components/Loader";
 
 import Main from "./pages/Main";
 
-export const ModeContex = React.createContext();
+export const AppContext = React.createContext();
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -16,6 +16,11 @@ function App() {
     "theme",
     defaultDark ? "dark" : "light"
   );
+
+  const defaultLanguage =
+    window.navigator.userLanguage || window.navigator.language;
+  const [language, setLanguage] = React.useState(defaultLanguage);
+  console.log(language);
 
   useEffect(() => {
     if (theme === "light") {
@@ -35,9 +40,9 @@ function App() {
   console.log(theme);
 
   return (
-    <ModeContex.Provider value={{ theme, setTheme }}>
+    <AppContext.Provider value={{ theme, setTheme, language, setLanguage }}>
       <div className="app">{loading ? <Loader /> : <Main />}</div>
-    </ModeContex.Provider>
+    </AppContext.Provider>
   );
 }
 

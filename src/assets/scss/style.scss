@@ -1,5 +1,5 @@
 @import "./reset.scss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700");
 
 body.white-content {
   background-color: #eee;
@@ -15,3 +15,4 @@ body {
 
 @import "./components/modeButton.scss";
 @import "./components/settingsBlock.scss";
+@import "./components/language.scss";

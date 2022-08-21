@@ -1,9 +1,9 @@
 import React from "react";
-import { ModeContex } from "../../App";
+import { AppContext } from "../../App";
 import SettingsSecondaryText from "./SettingsSecondaryText";
 
 const ModeButton = () => {
-  const { theme, setTheme } = React.useContext(ModeContex);
+  const { theme, setTheme } = React.useContext(AppContext);
   const switcher = React.useRef(null);
 
   const isChecked = theme === "dark" ? true : false;

@@ -28,28 +28,43 @@
       }
     }
   }
+  .header-button {
+    margin-left: 20px;
+
+    border: 1px solid #64ffda;
+    border-radius: 5px;
+    padding: 8px 13px;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+    }
+    @media (max-width: 945px) {
+      margin-left: 0;
+    }
+    @media (max-width: 800px) {
+      width: 100%;
+      text-align: center;
+      padding: 10px 15px;
+    }
+    a {
+      color: #64ffda;
+      font-size: 14px;
+      line-height: 20px;
+      width: 100%;
+      @media (max-width: 945px) {
+        padding: 6px 6px;
+      }
+      @media (max-width: 800px) {
+        font-size: 18px;
+      }
+    }
+  }
   .links {
     display: flex;
     align-items: center;
+
     @media (max-width: 800px) {
       display: none;
-    }
-    .button {
-      margin-left: 20px;
-      @media (max-width: 945px) {
-        margin-left: 0;
-      }
-      a {
-        padding: 8px 13px;
-        border: 1px solid #64ffda;
-        border-radius: 5px;
-        color: #64ffda;
-        font-size: 14px;
-        line-height: 20px;
-        @media (max-width: 945px) {
-          padding: 6px 6px;
-        }
-      }
     }
   }
   .linksList {
@@ -59,6 +74,7 @@
     li {
       margin: 15px;
       cursor: pointer;
+      letter-spacing: 1px;
       &:before {
         counter-increment: section;
         content: "0" counter(section) ".";
@@ -171,19 +187,26 @@
       box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
 
       padding: 0 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
       overflow: scroll;
       @media (max-width: 425px) {
         width: 70%;
         right: -70%;
       }
 
+      &__links {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
       &__link {
         margin-bottom: 20px;
         text-align: center;
         font-size: 20px;
+
         a {
           color: #ccd6f6;
         }
@@ -194,7 +217,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-top: 1px solid #eee;
         padding-top: 20px;
         margin-top: 10px;
       }

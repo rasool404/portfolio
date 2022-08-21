@@ -1,7 +1,9 @@
 .mode-button {
   div {
     display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
     p {
       font-size: 30px;
     }
@@ -22,7 +24,6 @@ input[type="checkbox"] {
   display: block;
   border-radius: 100px;
   position: relative;
-  margin: 0 10px;
 }
 
 .switch-label:after {
