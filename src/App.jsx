@@ -10,6 +10,7 @@ export const AppContext = React.createContext();
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [loaderSlide, setLoaderSlide] = useState(false);
 
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -34,14 +35,25 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3500);
+    }, 4000);
+    setTimeout(() => {
+      setLoaderSlide(true);
+    }, 3700);
   }, []);
 
   console.log(theme);
 
   return (
     <AppContext.Provider value={{ theme, setTheme, language, setLanguage }}>
-      <div className="app">{loading ? <Loader /> : <Main />}</div>
+      <div className="app">
+        {loading ? (
+          <div className={loaderSlide ? "bg open" : "bg"}>
+            <Loader />
+          </div>
+        ) : (
+          <Main />
+        )}
+      </div>
     </AppContext.Provider>
   );
 }

@@ -8,10 +8,22 @@ body.white-content {
 body {
   background-color: #0a192f;
   transition: all 0.3s ease 0s;
+  font-family: "Roboto Mono";
+}
+.btn {
+  border: 1px solid #64ffda;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+  color: #64ffda;
+  display: inline-block;
+  &:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+  }
 }
 
 @import "./parts/loader.scss";
 @import "./parts/header.scss";
+@import "./parts/hero.scss";
 
 @import "./components/modeButton.scss";
 @import "./components/settingsBlock.scss";
