@@ -7,28 +7,24 @@ const Sidebar = ({ isMenuOpen }) => {
   return (
     <div className={isMenuOpen ? "sidebar active" : "sidebar"}>
       <ul className="sidebar__links">
-        <li className="sidebar__link">
-          <a href="">{<Translate>nav_about</Translate> || "About"}</a>
+        <li>
+          <a href=""></a>
         </li>
-        <li className="sidebar__link">
-          <a href="">
-            {<Translate>nav_skills_and_tools</Translate> || "Skills & Tools"}
-          </a>
+        <li>
+          <a href=""></a>
         </li>
-        <li className="sidebar__link">
-          <a href="">{<Translate>nav_works</Translate> || "Works"}</a>
+        <li>
+          <a href=""></a>
         </li>
-        <li className="sidebar__link">
-          <a href="">
-            {<Translate>nav_testimonials</Translate> || "Testimonials"}
-          </a>
+        <li>
+          <a href=""></a>
         </li>
-        <li className="sidebar__link">
-          <a href="">{<Translate>nav_contact</Translate> || "Contact"}</a>
+        <li>
+          <a href=""></a>
         </li>
 
         <div className="header-button">
-          <a href="">{<Translate>nav_blog</Translate> || "Blog"}</a>
+          <a href="">{"Blog"}</a>
         </div>
 
         <li className="sidebar__actions">

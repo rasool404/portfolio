@@ -4,5 +4,10 @@
   "nav_works": "Works",
   "nav_testimonials": "Testimonials",
   "nav_contact": "Contact",
-  "nav_blog": "Blog"
+  "nav_blog": "Blog",
+  "hero_sup_title": "Hi, my name is",
+  "hero_title": "Rasul",
+  "hero_sub_title": "Front-End Developer",
+  "hero_text": "I'm an <span>independent creative developer</span> who likes to craft solid and scalable web products with great user experiences.",
+  "hero_btn": "Front-End Developer"
 }
