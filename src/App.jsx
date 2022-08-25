@@ -9,7 +9,7 @@ import Main from "./pages/Main";
 export const AppContext = React.createContext();
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [loaderSlide, setLoaderSlide] = useState(false);
 
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

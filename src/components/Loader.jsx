@@ -1,18 +1,39 @@
 import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../App";
 
 const Loader = () => {
+  const { theme, language } = useContext(AppContext);
   return (
     <>
       <div className="loader">
-        <h1>
-          <span className="let1">L</span>
-          <span className="let2">o</span>
-          <span className="let3">a</span>
-          <span className="let4">d</span>
-          <span className="let5">i</span>
-          <span className="let6">n</span>
-          <span className="let7">g</span>
-        </h1>
+        <div className="blobs">
+          <div className="blob-center"></div>
+          <div className="blob"></div>
+          <div className="blob"></div>
+          <div className="blob"></div>
+          <div className="blob"></div>
+          <div className="blob"></div>
+          <div className="blob"></div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation="10"
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="goo"
+              />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
       </div>
     </>
   );

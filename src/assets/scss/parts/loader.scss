@@ -1,97 +1,163 @@
+$bolb-color: #f4f9fc;
+body.white-content {
+  .loader {
+    background-color: #aadcec;
+  }
+}
 .loader {
-  width: 100%;
+  position: fixed;
   height: 100%;
-  position: absolute;
+  width: 100%;
   top: 0;
   left: 0;
-  background-color: #020c1b;
-  margin: 0;
-  z-index: 9999;
   display: flex;
-  align-items: center;
   justify-content: center;
-  border: 10px solid #fff;
-  border-bottom: 0;
+  align-items: center;
+  border: 10px solid #f4f9fc;
   transition: all 0.3s ease 0s;
-
-  h1 {
-    font-size: 70px;
-    color: #fff;
-    position: relative;
-    top: -30%;
-    letter-spacing: 5px;
-    font-family: "Arial";
-    font-weight: bold;
+  svg {
+    display: none;
   }
-  span {
+
+  // Loader
+  .blobs {
+    filter: url(#goo);
+    width: 300px;
+    height: 300px;
     position: relative;
-    top: 0.63em;
-    display: inline-block;
-    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 70px;
+    transform-style: preserve-3d;
+
+    // Blob center item
+    .blob-center {
+      transform-style: preserve-3d;
+      position: absolute;
+      background: $bolb-color;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      transform-origin: left top;
+      transform: scale(0.9) translate(-50%, -50%);
+      animation: blob-grow linear 3.4s infinite;
+      border-radius: 50%;
+      box-shadow: 0 -10px 40px -5px $bolb-color;
+    }
+  }
+
+  // Blob item
+  .blob {
+    position: absolute;
+    background: $bolb-color;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: blobs ease-out 3.4s infinite;
+    transform: scale(0.9) translate(-50%, -50%);
+    transform-origin: center top;
     opacity: 0;
-    transform: rotateX(-90deg);
-    text-shadow: 6px 6px 0px rgba(100, 255, 218, 0.1);
-  }
 
-  .let1 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 0.5s;
-  }
-
-  .let2 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 0.6s;
-  }
-
-  .let3 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 0.7s;
-  }
-
-  .let4 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 0.8s;
-  }
-
-  .let5 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 0.9s;
-  }
-
-  .let6 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  .let7 {
-    animation: drop 1.2s ease-in-out infinite;
-    animation-delay: 1.1s;
-  }
-
-  @keyframes drop {
-    10% {
-      opacity: 0.5;
+    // Set animation delay for each of type
+    @for $i from 1 to 6 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i * 0.2 + s;
+      }
     }
-    20% {
+  }
+
+  // Keyframes variables
+  $left: calc(-330px - 50%);
+  $right: calc(330px - 50%);
+
+  // Keyframes
+  @keyframes blobs {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate($left, -50%);
+    }
+    1% {
       opacity: 1;
-      top: 3.78em;
-      transform: rotateX(-360deg);
     }
-    80% {
+    35%,
+    65% {
       opacity: 1;
-      top: 3.78em;
-      transform: rotateX(-360deg);
+      transform: scale(0.9) translate(-50%, -50%);
     }
-    90% {
-      opacity: 0.5;
+    99% {
+      opacity: 1;
     }
     100% {
       opacity: 0;
-      top: 6.94em;
+      transform: scale(0) translate($right, -50%);
+    }
+  }
+
+  @keyframes blob-grow {
+    0%,
+    39% {
+      transform: scale(0) translate(-50%, -50%);
+    }
+    40%,
+    42% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+    43%,
+    44% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+    45%,
+    46% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+    47%,
+    48% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+    52% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+    54% {
+      transform: scale(1.7, 1.6) translate(-50%, -50%);
+    }
+    58% {
+      transform: scale(1.8, 1.7) translate(-50%, -50%);
+    }
+    68%,
+    70% {
+      transform: scale(1.7, 1.5) translate(-50%, -50%);
+    }
+    78% {
+      transform: scale(1.6, 1.4) translate(-50%, -50%);
+    }
+    80%,
+    81% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+    82%,
+    83% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+    84%,
+    85% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+    86%,
+    87% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+    90%,
+    91% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+    92%,
+    100% {
+      transform: scale(0) translate(-50%, -50%);
     }
   }
 }
-
 .bg {
   &.open {
     .loader {
