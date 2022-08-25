@@ -47,20 +47,30 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href=""></a>
+              <a href="">
+                <Translate>nav_skills_and_tools</Translate>
+              </a>
             </li>
             <li>
-              <a href=""></a>
+              <a href="">
+                <Translate>nav_works</Translate>
+              </a>
             </li>
             <li>
-              <a href=""></a>
+              <a href="">
+                <Translate>nav_testimonials</Translate>
+              </a>
             </li>
             <li>
-              <a href=""></a>
+              <a href="">
+                <Translate>nav_contact</Translate>
+              </a>
             </li>
           </ol>
           <div className="header-button">
-            <a href=""></a>
+            <a href="">
+              <Translate>nav_blog</Translate>
+            </a>
           </div>
           <div>
             <SettingsButton />

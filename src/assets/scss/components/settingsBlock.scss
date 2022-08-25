@@ -9,8 +9,10 @@
       height: 30px;
       fill: #64ffda;
       transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
       &:hover {
         fill: #ccd6f6;
+        transform: rotate(60deg);
       }
     }
   }

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700");
 
 body.white-content {
-  background-color: #eee;
+  background-color: #f4f9fc;
 }
 
 body {
@@ -29,3 +29,5 @@ body {
 @import "./components/settingsBlock.scss";
 @import "./components/language.scss";
 @import "./components/side.scss";
+
+@import "./light-theme.scss";
