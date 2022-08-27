@@ -31,30 +31,29 @@
   .header-button {
     margin-left: 20px;
 
-    border: 1px solid #64ffda;
-    border-radius: 5px;
-    padding: 8px 13px;
     transition: all 0.3s ease 0s;
-    &:hover {
-      background-color: rgba(100, 255, 218, 0.1);
-    }
-    @media (max-width: 945px) {
-      margin-left: 0;
-    }
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       width: 100%;
-      text-align: center;
-      padding: 10px 15px;
     }
     a {
       color: #64ffda;
       font-size: 14px;
-      line-height: 20px;
-      width: 100%;
-      @media (max-width: 945px) {
-        padding: 6px 6px;
+
+      border: 1px solid #64ffda;
+      border-radius: 5px;
+      padding: 10px 13px;
+      &:hover {
+        background-color: rgba(100, 255, 218, 0.1);
       }
-      @media (max-width: 800px) {
+      @media (max-width: 1000px) {
+        display: block;
+        text-align: center;
+        width: 100%;
+      }
+      @media (max-width: 1000px) {
+        width: 100%;
+        text-align: center;
+        padding: 10px 10px;
         font-size: 18px;
       }
     }
@@ -63,7 +62,7 @@
     display: flex;
     align-items: center;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       display: none;
     }
   }
@@ -125,7 +124,7 @@
   .menu {
     display: none;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       display: block;
     }
 

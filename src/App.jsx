@@ -9,6 +9,10 @@ import Main from "./pages/Main";
 export const AppContext = React.createContext();
 
 function App() {
+  /*
+    TODO:
+    
+  */
   const [loading, setLoading] = useState(true);
   const [loaderSlide, setLoaderSlide] = useState(false);
 

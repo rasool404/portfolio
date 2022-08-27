@@ -66,7 +66,7 @@ const Side = () => {
       </div>
       <div className="side__right">
         <div>
-          <a href="">rasuljonhalimov47@gmail.com</a>
+          <a href="">rasul.halimov11@gmail.com</a>
         </div>
       </div>
     </div>

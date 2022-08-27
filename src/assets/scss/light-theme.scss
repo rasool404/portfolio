@@ -1,5 +1,140 @@
 body.white-content {
+  background-color: #f4f9fc;
+  .header {
+    .logo {
+      svg {
+        g {
+          fill: #7f00e0 !important;
+        }
+      }
+    }
+    .linksList li {
+      &:before {
+        color: #7f00e0;
+      }
+      a {
+        &:before {
+          background-color: #141c3a;
+        }
+        color: #141c3a;
+        font-weight: bold;
+      }
+    }
+    .header-button a {
+      border-color: #6e07f3;
+      color: #6e07f3;
+      font-weight: bold;
+      transition: all 0.3s ease 0s;
+
+      &:hover {
+        background-color: #6e07f3;
+        border-color: #6e07f3;
+        color: white;
+      }
+    }
+    .menu__burger {
+      svg {
+        .line {
+          transition: all 0.3s ease 0s;
+
+          stroke: #7f00e0 !important;
+        }
+      }
+      &.active {
+        svg {
+          .line {
+            stroke: #fff !important;
+          }
+        }
+      }
+    }
+  }
+  .header .menu .sidebar {
+    color: #fff;
+    background-color: #6e07f3;
+    .sidebar__link a {
+      color: #fff;
+    }
+    .header-button a {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+  .settings-button {
+    svg {
+      fill: #7f00e0;
+      &:hover {
+        fill: #141c3a;
+      }
+    }
+  }
+  .settings-block {
+    background-color: #6e07f3;
+  }
+  .settings-secondary-text {
+    color: #fff;
+  }
+  .language__item {
+    border-color: white;
+    color: white;
+    &.active {
+      background-color: white;
+      color: #141c3a;
+    }
+  }
+  .side__left {
+    li {
+      &:hover {
+        stroke: #6e07f3;
+        svg {
+          stroke: #6e07f3;
+        }
+      }
+      svg {
+        stroke: #141c3a;
+      }
+    }
+    &:after {
+      background-color: #000;
+    }
+  }
+  .side__right {
+    a {
+      color: #141c3a;
+      font-weight: bold;
+      &:hover {
+        color: #6e07f3;
+      }
+    }
+    &:after {
+      background-color: #000;
+    }
+  }
+  .hero__sup-title {
+    color: #141c3a;
+  }
   .hero__title {
-    color: black;
+    color: #0f1b61;
+  }
+  .hero__sub-title {
+    color: #141c3a;
+  }
+  .hero__text {
+    color: #0f1b61;
+    span {
+      color: #141c3a;
+    }
+  }
+  .hero__btn {
+    border-color: #6e07f3;
+    color: #6e07f3;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: #6e07f3;
+      border-color: #6e07f3;
+      color: white;
+    }
   }
 }
